@@ -7,8 +7,7 @@ try:
         print(F)
     elif num == 2:
         tem = int(input('请输入摄氏度：'))
-    C = tem * 9/5 + 32
-    print(C)    
+        C = tem * 9/5 + 32
+        print(C)    
 except ValueError:
     print("Invalid input")
-
