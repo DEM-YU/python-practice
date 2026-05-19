@@ -11,8 +11,12 @@ def add_contact():
         print(f'{name}已存在，请移步修改功能')
         return
     
+    phone = input('请输入联系人的电话：')
+    if not phone:
+        print('电话不能为空')
+        return
     contact[name] = {'phone': phone}
-    print(f'{name}已添加')
+    print(f'{name}已添加')  
 
 def del_contact():
     print('删除联系人')
@@ -36,7 +40,7 @@ def search_contact():
         print(f'找不到{search_name}的联系人')
         return
     
-    print(f'姓名：{search_name},电话：{contact[search_name]}')  
+    print(f"姓名：{search_name},电话：{contact[search_name]['phone']}")  
 
 def show_contact():
     print('显示联系人')
@@ -45,8 +49,7 @@ def show_contact():
         return
     print(f'当前共有{len(contact)}位联系人')
     for name,info in contact.items():
-        print(f'姓名：{name},电话：{info[phone]}')
-    
+        print(f"姓名：{name},电话：{info['phone']}")
 
 
 while True:
